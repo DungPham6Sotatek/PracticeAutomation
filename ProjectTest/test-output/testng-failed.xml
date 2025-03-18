@@ -5,6 +5,7 @@
     <classes>
       <class name="automation.testsuite.LoginTest">
         <methods>
+          <include name="openBrowser"/>
           <include name="TestO1"/>
         </methods>
       </class> <!-- automation.testsuite.LoginTest -->
