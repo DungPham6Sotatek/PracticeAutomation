@@ -1,6 +1,9 @@
 package automation.common;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -27,23 +30,32 @@ public class CommonBase {
 		return driver;
 		
 	}
-	public static String getElementValue (Element element) {
-		return element.getValue();
+	public void findElementByID(String value) {
+		driver.findElement(By.id(value));
 	}
-	public WebDriver findElementByID(Element element) {
-		return (WebDriver) driver.findElement(By.id(getElementValue(element)));
+	public void findElementByXpath(String value) {
+		driver.findElement(By.xpath(value));
+	}
+	
+	public double[] sortArray(String[] arr) {
+		double[] numericPrices = new double[2];
+		for (int i = 0 ; i <arr.length; i++) {
+			numericPrices[i] = extractPrice(arr[i]) ;
+		}
+		System.out.println(numericPrices);
+
+		Arrays.sort(numericPrices);
+		
+		System.out.println(numericPrices.toString());
+		
+		  
+		return numericPrices;
+	}
+	
+	public double extractPrice(String priceText) {
+		return Double.parseDouble(priceText.replaceAll("[^0-9.]", ""));
+	}
 	}
 
-	public void clickElement(Element element) {
-		WebElement webElement = (WebElement) findElementByID(element);
-		if(element != null) {
-			webElement.click();
-		}else {
-			System.out.println("Not found element");
-		}
-	}
-	public WebElement waitElementVisible(By Locator, int timeoutSecond) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSecond));
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(Locator));
-	}
-}
+
+
