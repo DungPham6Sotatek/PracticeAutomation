@@ -4,6 +4,7 @@ import static org.testng.Assert.assertTrue;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -48,19 +49,17 @@ public class Assignment01 extends CommonBase{
 		allPrice[1] = lazadaProductPrice;
 		
 		//sort
-		System.out.println(allPrice);
+		System.out.println(Arrays.toString(allPrice));
 		double[] newAllPrice = sortArray(allPrice);
-		System.out.println(newAllPrice);
+		System.out.println(Arrays.toString(newAllPrice));
 		
-		
-		
-		
-		
+		System.out.println("Iphone price on ebay: " +ebayProductPrice);
+		System.out.println("Iphone price on lazada: " +lazadaProductPrice);
 		
 	}
 	
 	@AfterMethod
 	public void closeBrowser() {
-		driver.close();
+		driver.quit();
 	}
 }

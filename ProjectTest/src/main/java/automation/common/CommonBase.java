@@ -38,15 +38,16 @@ public class CommonBase {
 	}
 	
 	public double[] sortArray(String[] arr) {
+		
 		double[] numericPrices = new double[2];
 		for (int i = 0 ; i <arr.length; i++) {
 			numericPrices[i] = extractPrice(arr[i]) ;
 		}
-		System.out.println(numericPrices);
+		System.out.println(Arrays.toString(numericPrices));
 
 		Arrays.sort(numericPrices);
 		
-		System.out.println(numericPrices.toString());
+		System.out.println(Arrays.toString(numericPrices));
 		
 		  
 		return numericPrices;
