@@ -1,6 +1,9 @@
 package automation.constant;
 
 public class CT_EbaySearchResult {
-	public static String EBAY_PRICE = "(//div[@class= 's-item__details-section--primary']//span[@class = 's-item__price'])[3]";
+	public static final String EBAY_PRODUCTS = "//li[@class ='s-item s-item__pl-on-bottom']";
+	public static final String PRODUCT_PRICE = "//span[@class = 's-item__price']";
+	public static final String PRODUCT_NAME = "//span[@role = 'heading']";
+	public static final String PRODUCT_LINK = "//a[@class = 's-item__link']";
 	
 }

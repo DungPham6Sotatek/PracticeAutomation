@@ -7,7 +7,6 @@
         <methods>
           <include name="openBrowser"/>
           <include name="comparePrice"/>
-          <include name="closeBrowser"/>
         </methods>
       </class> <!-- automation.testsuite.Assignment01 -->
     </classes>
